@@ -1,0 +1,3 @@
+2026-07-27T01:24:54 | [ALERT] HIGH RISK - 'svc-payment-api' (owner: finance-team, score: 65/100)
+2026-07-27T01:24:54 | [ALERT] CRITICAL RISK - 'old-backup-key' (owner: unknown, score: 95/100)
+2026-07-27T01:24:54 | [ALERT] CRITICAL RISK - 'test-key-temp' (owner: dev-intern, score: 85/100)

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "svc-payment-api",
+    "owner": "finance-team",
+    "type": "service_account",
+    "permissions": ["read:invoices", "write:invoices", "admin:database"],
+    "created_date": "2023-01-15",
+    "last_used": "2026-07-20"
+  },
+  {
+    "name": "iot-sensor-042",
+    "owner": "facilities-team",
+    "type": "iot_credential",
+    "permissions": ["read:sensor_data"],
+    "created_date": "2025-11-02",
+    "last_used": "2026-07-26"
+  },
+  {
+    "name": "old-backup-key",
+    "owner": "unknown",
+    "type": "api_key",
+    "permissions": ["read:all", "write:all", "delete:all"],
+    "created_date": "2021-03-10",
+    "last_used": "2023-05-01"
+  },
+  {
+    "name": "ci-cd-deploy-bot",
+    "owner": "devops-team",
+    "type": "service_account",
+    "permissions": ["write:deploy", "read:repo"],
+    "created_date": "2024-06-01",
+    "last_used": "2026-07-25"
+  },
+  {
+    "name": "test-key-temp",
+    "owner": "dev-intern",
+    "type": "api_key",
+    "permissions": ["admin:all"],
+    "created_date": "2022-09-01",
+    "last_used": "2022-09-05"
+  }
+]
