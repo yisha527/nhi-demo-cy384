@@ -1,0 +1,21 @@
+id,name,type,owner,age_days,idle_days,active,permissions,risk_score,risk_level
+nhi-0001,api_key-001,API Key,platform-team,35,15,True,payments:write|users:read,25,MEDIUM
+nhi-0002,cicd_token-002,CI/CD Token,payments-eng,99,4,True,repo:read,14,LOW
+nhi-0003,cicd_token-003,CI/CD Token,growth-eng,37,34,True,repo:write|secrets:read|deploy:prod|repo:read,39,MEDIUM
+nhi-0004,iot_device-004,IoT Device,sre-team,358,110,True,sensor:read|firmware:update,68,HIGH
+nhi-0005,bot_token-005,Bot Token,growth-eng,628,44,True,chat:read|chat:write|email:send|channel:admin,62,HIGH
+nhi-0006,bot_token-006,Bot Token,security-team,601,601,True,chat:read,65,HIGH
+nhi-0007,bot_token-007,Bot Token,data-eng,91,12,True,channel:admin|chat:write|email:send|chat:read,34,MEDIUM
+nhi-0008,bot_token-008,Bot Token,mobile-eng,728,663,True,chat:write,65,HIGH
+nhi-0009,service_account-009,Service Account,payments-eng,483,473,True,storage:admin|db:read,80,CRITICAL
+nhi-0010,bot_token-010,Bot Token,sre-team,420,108,True,chat:write|channel:admin|email:send,70,HIGH
+nhi-0011,iot_device-011,IoT Device,mobile-eng,156,63,True,firmware:update|telemetry:write|sensor:read,45,MEDIUM
+nhi-0012,service_account-012,Service Account,payments-eng,151,23,True,db:read,21,LOW
+nhi-0013,iot_device-013,IoT Device,mobile-eng,620,620,True,firmware:update|telemetry:write,80,CRITICAL
+nhi-0014,cicd_token-014,CI/CD Token,growth-eng,891,696,True,deploy:prod,85,CRITICAL
+nhi-0015,api_key-015,API Key,mobile-eng,310,232,True,users:read,60,HIGH
+nhi-0016,cicd_token-016,CI/CD Token,growth-eng,118,38,True,repo:write|secrets:read,36,MEDIUM
+nhi-0017,cicd_token-017,CI/CD Token,data-eng,10,7,True,repo:read,7,LOW
+nhi-0018,bot_token-018,Bot Token,security-team,255,255,True,chat:read,56,HIGH
+nhi-0019,api_key-019,API Key,payments-eng,788,128,True,billing:read|users:read,71,HIGH
+nhi-0020,cicd_token-020,CI/CD Token,security-team,443,276,True,deploy:prod|repo:write,80,CRITICAL
