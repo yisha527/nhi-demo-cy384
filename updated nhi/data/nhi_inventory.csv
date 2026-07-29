@@ -1,0 +1,11 @@
+id,name,type,owner,age_days,idle_days,active,permissions,risk_score,risk_level
+nhi-0001,api_key-001,API Key,platform-team,35,15,True,payments:write|users:read,25,MEDIUM
+nhi-0002,cicd_token-002,CI/CD Token,payments-eng,99,4,True,repo:write|secrets:read|deploy:prod|repo:read,39,MEDIUM
+nhi-0003,cicd_token-003,CI/CD Token,growth-eng,37,34,True,sensor:read|firmware:update,68,HIGH
+nhi-0004,iot_device-004,IoT Device,sre-team,358,110,True,chat:read|chat:write|email:send|channel:admin,62,HIGH
+nhi-0005,bot_token-005,Bot Token,growth-eng,628,44,True,chat:read|chat:read,65,HIGH
+nhi-0006,bot_token-006,Bot Token,security-team,601,601,True,channel:admin|chat:write|email:send|chat:read,34,MEDIUM
+nhi-0007,bot_token-007,Bot Token,data-eng,91,12,True,chat:write,65,HIGH
+nhi-0008,bot_token-008,Bot Token,mobile-eng,728,663,True,storage:admin|db:read,80,CRITICAL
+nhi-0009,service_account-009,Service Account,payments-eng,483,473,True,channel:admin|email:send,70,HIGH
+nhi-0010,bot_token-010,Bot Token,sre-team,420,108,True,chat:write|firmware:update|telemetry:write|sensor:read,45,MEDIUM
