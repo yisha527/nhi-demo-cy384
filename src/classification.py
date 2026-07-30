@@ -2,9 +2,6 @@
 Risk Classification Module
 ----------------------------
 Converts a numeric risk score into a human-readable label.
-Adjust thresholds based on your own risk appetite - document
-your reasoning in the report (this maps to your "setting risk
-thresholds" challenge).
 """
 
 

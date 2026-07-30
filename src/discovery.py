@@ -2,45 +2,43 @@
 Discovery Engine
 ----------------
 Scans a data source and returns a list of machine identities.
-Right now it reads from a local JSON file (simulating a scan).
-Later you can extend this to read from cloud provider APIs,
-.env files, GitHub repos, or Kubernetes secrets.
+Reads from a CSV file (simulating a scan of an environment).
 """
 
-import json
+import csv
 from pathlib import Path
 
 
 def discover_identities(source_path: str) -> list[dict]:
-    """
-    Load and validate identities from the given JSON file.
-    Returns a list of dicts, each representing one identity.
-    """
     path = Path(source_path)
     if not path.exists():
         raise FileNotFoundError(f"No such data source: {source_path}")
 
-    with open(path, "r") as f:
-        raw_identities = json.load(f)
+    required_fields = {"id", "name", "type", "owner", "age_days",
+                        "idle_days", "active", "permissions"}
 
-    required_fields = {"name", "owner", "type", "permissions",
-                        "created_date", "last_used"}
+    identities = []
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            missing = required_fields - row.keys()
+            if missing:
+                print(f"[WARN] Skipping row - missing fields: {missing}")
+                continue
 
-    valid_identities = []
-    for identity in raw_identities:
-        missing = required_fields - identity.keys()
-        if missing:
-            print(f"[WARN] Skipping '{identity.get('name', '?')}' "
-                  f"- missing fields: {missing}")
-            continue
-        valid_identities.append(identity)
+            identity = {
+                "id": row["id"],
+                "name": row["name"],
+                "type": row["type"],
+                "owner": row["owner"],
+                "age_days": int(row["age_days"]),
+                "idle_days": int(row["idle_days"]),
+                "active": row["active"].strip().lower() == "true",
+                "permissions": [p.strip() for p in row["permissions"].split("|") if p.strip()],
+                "reference_risk_score": int(row["risk_score"]) if row.get("risk_score") else None,
+                "reference_risk_level": row.get("risk_level"),
+            }
+            identities.append(identity)
 
-    print(f"[INFO] Discovered {len(valid_identities)} identities.")
-    return valid_identities
-
-
-if __name__ == "__main__":
-    # Quick manual test
-    identities = discover_identities("../data/identities.json")
-    for i in identities:
-        print(i["name"], "-", i["owner"])
+    print(f"[INFO] Discovered {len(identities)} identities.")
+    return identities
